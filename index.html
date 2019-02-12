@@ -2,14 +2,118 @@
 <html>
 <head lang="uk">
     <meta charset="UTF-8">
-    <title>My Page</title>
-
-
+    <title>Shopping Cart</title>
     <link rel="stylesheet" type="text/css" href="main.css" />
 </head>
 <body>
-<h1>Hello World</h1>
-<p>Hello Git</p>
-<div class="text2018">Hi 2018!!!</div>
-</body>
+	<div class="box main-container">
+	    <div clas="box columns-container grid" style="display: flex">
+	        <div class="column one">
+	            <div class="box segments shop-list">
+	                <div class="box segment first-line">
+	                    <div class="box segment add new-item">
+	                        <input type="text" placeholder="Назва товару">
+	                        <button class="box button main">
+	                            Додати
+	                        </button>
+	                    </div>
+	                </div>
+	                <div class="box segment items not-bought">
+	                    <div class="box grid inhalt">
+	                        <div class="column name">
+	                            <span class="state not-bought">Помідори</span>
+	                        </div>
+	                        <div class="column complex amount-buttons">
+	                            <button class="box button mini round red minus-button">
+	                                -
+	                            </button>
+	                            <span class="box label count">1</span>
+	                            <button class="box button mini round green plus-button">
+	                                +
+	                            </button>
+	                        </div>
+	                        <div class="column complex last-buttons">
+	                            <button class="box button mini buy-button">Куплено</button>
+	                            <button class="box button mini red delete-button">x</button>
+	                        </div>
+	                    </div>
+	                </div>
+	                <div class="box segment items not-bought">
+	                    <div class="box grid inhalt">
+	                        <div class="column name">
+	                            <span class="state not-bought">Печиво</span>
+	                        </div>
+	                        <div class="column complex amount-buttons">
+	                            <button class="box button mini round red minus-button">
+	                                -
+	                            </button>
+	                            <span class="box label count">1</span>
+	                            <button class="box button mini round green plus-button">
+	                                +
+	                            </button>
+	                        </div>
+	                        <div class="column complex last-buttons">
+	                            <button class="box button mini buy-button">Куплено</button>
+	                            <button class="box button mini red delete-button">x</button>
+	                        </div>
+	                    </div>
+	                </div>
+	                <div class="box segment items not-bought">
+	                    <div class="box grid inhalt">
+	                        <div class="column name">
+	                            <span class="state not-bought">Сир</span>
+	                        </div>
+	                        <div class="column complex amount-buttons">
+	                            <button class="box button mini round red minus-button">
+	                                -
+	                            </button>
+	                            <span class="box label count">1</span>
+	                            <button class="box button mini round green plus-button">
+	                                +
+	                            </button>
+	                        </div>
+	                        <div class="column complex last-buttons">
+	                            <button class="box button mini buy-button">Куплено</button>
+	                            <button class="box button mini red delete-button">x</button>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+
+	        <div class="column two">
+	            <div class="box bought segments">
+	                <div class="box segment">
+	                    <h3>Залишилося</h3>
+	                </div>
+	                <div class="box segment">
+	                    <div class="elements-not-bought">
+	                        <span class="box mini label left">
+	                            <span class="title">Помідори</span>
+	                            <span class="box mini yellow round label left-count">1</span>
+	                        </span>
+	                        <span class="box mini label left">
+	                            <span class="title">Печиво</span>
+	                            <span class="box mini yellow round label left-count">1</span>
+	                        </span>
+	                        <span class="box mini label left">
+	                            <span class="title">Сир</span>
+	                            <span class="box mini yellow round label left-count">1</span>
+	                        </span>
+	                    </div>
+	                </div>
+	                <div class="box segment">
+	                    <h3>Куплено</h3>
+	                </div>
+	                <div class="box segment">
+
+	                </div>
+
+	            </div>
+
+	        </div>
+	    </div>
+	</div>
+
+	</body>
 </html>
