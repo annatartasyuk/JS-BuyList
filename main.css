@@ -11,7 +11,6 @@ body {
 	}
 
 	.box.main-container {
-	    min-width: 725px;
 	    padding-top: 100px;
 	    margin-right: 2rem;
 	    margin-left: 2rem;
@@ -20,7 +19,6 @@ body {
 	.box.grid {
 	    margin: -1rem;
 	    display: flex;
-	    flex: auto;
 	    padding: 0;
 	}
 
@@ -88,10 +86,8 @@ body {
 	}
 
 	.box.segments {
-	    border: none;
-	/ / border-color: #6435c9;
-	/ / padding: 0.5 rem;
-	    background-color: white;
+	  	border: solid 1px #c4e3ec;
+		  background-color: white;
 	}
 
 	.box.segments > .segment {
@@ -142,19 +138,25 @@ body {
 	    border-bottom-left-radius: 0;
 	}
 
+	.box.button.main:hover {
+	    background-color: #1b78cc;
+	}
+
 	.amount-buttons {
 	    text-align: center;
 	}
 
 	.box.button {
-	    padding: .6em 1em;
+	    padding: .8em 1.1em;
 	    margin: 0;
 	    min-height: 1em;
 	    line-height: 1em;
 	    font-weight: 600;
-	    cursor: inherit;
-	    border: none;
-	    border-radius: .3rem;
+			border: none;
+      border-radius: .3rem;
+      transition: all .35s ease;
+      cursor: pointer;
+      position: relative;
 	}
 
 	.box.mini.button {
@@ -162,20 +164,32 @@ body {
 	}
 
 	.box.mini.buy-button {
-	    background: #D7F6FF;
+	    background-color: #D7F6FF;
 	}
 
 	.box.round.button {
 	    border-radius: 10em;
 	    border: 0;
+			color: white;
+      font-weight: 800;
 	}
 
 	.box.mini.red.button {
 	    background-color: #DB2828;
+			color: white;
+      font-weight: 800;
 	}
+
+	.box.mini.red.button:hover {
+    background-color: #B12828;
+  }
 
 	.box.mini.green.button {
 	    background-color: #21BA45;
+	}
+
+	.box.mini.green.button:hover {
+	    background-color: #219b38;
 	}
 
 	.last-buttons {
@@ -187,7 +201,6 @@ body {
 	.column.one {
 	    width: 70%;
 	    padding: 1rem;
-	/ / float: left;
 	}
 
 	.column.two {
@@ -202,4 +215,88 @@ body {
 
 	h3 {
 	    margin: 0;
+	}
+	.box.label.made-by {
+	    width: auto;
+	    height: auto;
+	    background-color: #318de2;
+	    color: white;
+	    position: fixed;
+	    left: 3rem;
+	    bottom: -47px;
+	    border-bottom-left-radius: 0;
+	    border-bottom-right-radius: 0;
+	    padding: 5px;
+	    padding-bottom: 7px;
+	    transition: all 1s ease;
+	}
+
+	.box.label.made-by:hover {
+	    bottom: -2px;
+	    background-color: #4343c7;
+	}
+
+	.signature {
+	    display: block;
+	    font-size: .9em;
+	}
+
+	.signature:first-child {
+	    padding: 10px 3px;
+	    padding-top: 7px;
+	    padding-bottom: 18px;
+	    text-align: center;
+	    font-weight: 900;
+	    font-size: 1.5em;
+	}
+
+	.signature:last-child {
+	    padding-top: 3px;
+	    font-size: 1.1em;
+	    font-weight: 200;
+	}
+
+	@media print {
+	    .box.label.made-by {
+	        background-color: white;
+	        color: black;
+	        border: 1px solid;
+	        border-color: #4343c7;
+	        position: fixed;
+	        left: 3rem;
+	        bottom: -2px;
+	    }
+
+	}
+
+	@media (max-width: 700px) {
+	    .box.grid.columns-container {
+	        display: block;
+	    }
+
+	    .box.main-container {
+	        padding-top: 20px;
+	    }
+	}
+
+	.button::after {
+	    position: absolute;
+	    bottom: 105%;
+	    left: 25%;
+	    background: #4343c7;
+	    border-radius: 10px;
+	    color: white;
+	    opacity: 0;
+	    padding: 10px 12px;
+	    line-height: 1em;
+	    font-size: .7em;
+	    font-weight: 200;
+	    visibility: hidden;
+	    transition: all .5s ease;
+	    content: attr(data-tooltip);
+	}
+
+	.button:hover::after {
+	    opacity: 1;
+	    visibility: visible;
 	}

@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<html>
-<head lang="uk">
+<html lang="uk">
+<head>
     <meta charset="UTF-8">
     <title>Shopping Cart</title>
     <link rel="stylesheet" type="text/css" href="main.css" />
 </head>
 <body>
 	<div class="box main-container">
-	    <div clas="box columns-container grid" style="display: flex">
+	    <div clas="box columns-container grid">
 	        <div class="column one">
 	            <div class="box segments shop-list">
 	                <div class="box segment first-line">
 	                    <div class="box segment add new-item">
 	                        <input type="text" placeholder="Назва товару">
-	                        <button class="box button main">
+	                        <button class="box button main" data-tooltip="Додати">
 	                            Додати
 	                        </button>
 	                    </div>
@@ -24,17 +24,17 @@
 	                            <span class="state not-bought">Помідори</span>
 	                        </div>
 	                        <div class="column complex amount-buttons">
-	                            <button class="box button mini round red minus-button">
+	                            <button class="box button mini round red minus-button" data-tooltip="-">
 	                                -
 	                            </button>
 	                            <span class="box label count">1</span>
-	                            <button class="box button mini round green plus-button">
+	                            <button class="box button mini round green plus-button" data-tooltip="+">
 	                                +
 	                            </button>
 	                        </div>
 	                        <div class="column complex last-buttons">
-	                            <button class="box button mini buy-button">Куплено</button>
-	                            <button class="box button mini red delete-button">x</button>
+	                            <button class="box button mini buy-button" data-tooltip="Куплено" >Куплено</button>
+	                            <button class="box button mini red delete-button" data-tooltip="х" >x</button>
 	                        </div>
 	                    </div>
 	                </div>
@@ -44,43 +44,43 @@
 	                            <span class="state not-bought">Печиво</span>
 	                        </div>
 	                        <div class="column complex amount-buttons">
-	                            <button class="box button mini round red minus-button">
+	                            <button class="box button mini round red minus-button" data-tooltip="-">
 	                                -
 	                            </button>
 	                            <span class="box label count">1</span>
-	                            <button class="box button mini round green plus-button">
+	                            <button class="box button mini round green plus-button" data-tooltip="+">
 	                                +
 	                            </button>
 	                        </div>
 	                        <div class="column complex last-buttons">
-	                            <button class="box button mini buy-button">Куплено</button>
-	                            <button class="box button mini red delete-button">x</button>
+	                            <button class="box button mini buy-button" data-tooltip="Куплено" >Куплено</button>
+	                            <button class="box button mini red delete-button" data-tooltip="х" >x</button>
 	                        </div>
 	                    </div>
 	                </div>
-	                <div class="box segment items not-bought">
-	                    <div class="box grid inhalt">
-	                        <div class="column name">
-	                            <span class="state not-bought">Сир</span>
-	                        </div>
-	                        <div class="column complex amount-buttons">
-	                            <button class="box button mini round red minus-button">
-	                                -
-	                            </button>
-	                            <span class="box label count">1</span>
-	                            <button class="box button mini round green plus-button">
-	                                +
-	                            </button>
-	                        </div>
-	                        <div class="column complex last-buttons">
-	                            <button class="box button mini buy-button">Куплено</button>
-	                            <button class="box button mini red delete-button">x</button>
-	                        </div>
-	                    </div>
-	                </div>
-	            </div>
-	        </div>
 
+                  <div class="box segment items not-bought">
+                                      <div class="box grid inhalt">
+                                          <div class="column name">
+                                              <span class="state not-bought">Сир</span>
+                                          </div>
+                                          <div class="column complex amount-buttons">
+                                              <button class="box button mini round red minus-button" data-tooltip="-">
+                                                  -
+                                              </button>
+                                              <span class="box label count">1</span>
+                                              <button class="box button mini round green plus-button" data-tooltip="+">
+                                                  +
+                                              </button>
+                                          </div>
+                                          <div class="column complex last-buttons">
+                                              <button class="box button mini buy-button" data-tooltip="Куплено">Куплено</button>
+                                              <button class="box button mini red delete-button" data-tooltip="х">x</button>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
 	        <div class="column two">
 	            <div class="box bought segments">
 	                <div class="box segment">
@@ -114,6 +114,11 @@
 	        </div>
 	    </div>
 	</div>
-
+  <div class="box label made-by">
+     <span class="signature buy-list">Buy List</span>
+     <span class="signature created-by">Created by:</span>
+     <span class="signature my-name">Anna Tartasyuk</span>
+ </div>
+</div>
 	</body>
 </html>
