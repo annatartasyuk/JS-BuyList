@@ -7,18 +7,80 @@
 </head>
 <body>
 	<div class="box main-container">
-	    <div clas="box grid columns-container">
+	    <div clas="box columns-container grid">
 	        <div class="column one">
 	            <div class="box segments shop-list">
 	                <div class="box segment first-line">
 	                    <div class="box segment add new-item">
-	                        <input type="text" placeholder="Назва товару" class="add-item">
-	                        <button class="box button add-button" data-tooltip="Add item">
+	                        <input type="text" placeholder="Назва товару">
+	                        <button class="box button main" data-tooltip="Додати">
 	                            Додати
 	                        </button>
 	                    </div>
 	                </div>
+	                <div class="box segment items not-bought">
+	                    <div class="box grid inhalt">
+	                        <div class="column name">
+	                            <span class="state not-bought">Помідори</span>
+	                        </div>
+	                        <div class="column complex amount-buttons">
+	                            <button class="box button mini round red minus-button" data-tooltip="-">
+	                                -
+	                            </button>
+	                            <span class="box label count">1</span>
+	                            <button class="box button mini round green plus-button" data-tooltip="+">
+	                                +
+	                            </button>
+	                        </div>
+	                        <div class="column complex last-buttons">
+	                            <button class="box button mini buy-button" data-tooltip="Куплено" >Куплено</button>
+	                            <button class="box button mini red delete-button" data-tooltip="х" >x</button>
+	                        </div>
+	                    </div>
+	                </div>
+	                <div class="box segment items not-bought">
+	                    <div class="box grid inhalt">
+	                        <div class="column name">
+	                            <span class="state not-bought">Печиво</span>
+	                        </div>
+	                        <div class="column complex amount-buttons">
+	                            <button class="box button mini round red minus-button" data-tooltip="-">
+	                                -
+	                            </button>
+	                            <span class="box label count">1</span>
+	                            <button class="box button mini round green plus-button" data-tooltip="+">
+	                                +
+	                            </button>
+	                        </div>
+	                        <div class="column complex last-buttons">
+	                            <button class="box button mini buy-button" data-tooltip="Куплено" >Куплено</button>
+	                            <button class="box button mini red delete-button" data-tooltip="х" >x</button>
+	                        </div>
+	                    </div>
+	                </div>
 
+                  <div class="box segment items not-bought">
+                                      <div class="box grid inhalt">
+                                          <div class="column name">
+                                              <span class="state not-bought">Сир</span>
+                                          </div>
+                                          <div class="column complex amount-buttons">
+                                              <button class="box button mini round red minus-button" data-tooltip="-">
+                                                  -
+                                              </button>
+                                              <span class="box label count">1</span>
+                                              <button class="box button mini round green plus-button" data-tooltip="+">
+                                                  +
+                                              </button>
+                                          </div>
+                                          <div class="column complex last-buttons">
+                                              <button class="box button mini buy-button" data-tooltip="Куплено">Куплено</button>
+                                              <button class="box button mini red delete-button" data-tooltip="х">x</button>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
 	        <div class="column two">
 	            <div class="box bought segments">
 	                <div class="box segment">
@@ -26,6 +88,18 @@
 	                </div>
 	                <div class="box segment">
 	                    <div class="elements-not-bought">
+	                        <span class="box mini label left">
+	                            <span class="title">Помідори</span>
+	                            <span class="box mini yellow round label left-count">1</span>
+	                        </span>
+	                        <span class="box mini label left">
+	                            <span class="title">Печиво</span>
+	                            <span class="box mini yellow round label left-count">1</span>
+	                        </span>
+	                        <span class="box mini label left">
+	                            <span class="title">Сир</span>
+	                            <span class="box mini yellow round label left-count">1</span>
+	                        </span>
 	                    </div>
 	                </div>
 	                <div class="box segment">
@@ -46,40 +120,5 @@
      <span class="signature my-name">Anna Tartasyuk</span>
  </div>
 </div>
-<div class="hidden row-template">
-    <div class="box segment items not-bought">
-        <div class="box grid inhalt">
-            <div class="column name">
-                <span class="state not-bought" data-tooltip="Change name then press 'ENTER' to save">Сир</span>
-                <span class="state already-bought hidden">Сир</span>
-                <input type="text" class="name-edit hidden" placeholder="Нова назва">
-            </div>
-            <div class="column complex amount-buttons">
-                <button class="box button mini round red minus-button disabled" data-tooltip="Minus">
-                    -
-                </button>
-                <span class="box label count">1</span>
-                <button class="box button mini round green plus-button" data-tooltip="Plus">
-                    +
-                </button>
-            </div>
-            <div class="column complex last-buttons">
-                <button class="box button mini buy-button" data-tooltip="Bought item">Куплено</button>
-                <button class="box button mini unbuy-button hidden" data-tooltip="Not bought item">Не куплено</button>
-                <button class="box button mini red delete-button" data-tooltip="Delete item from the list">x</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="hidden bought-items-template">
-<span class="box mini label left">
-    <span class="title"></span>
-    <span class="box mini yellow round label left-count">1</span>
-</span>
-</div>
-
-<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-<script type="text/javascript" src="jsfile.js"></script>
 	</body>
 </html>
