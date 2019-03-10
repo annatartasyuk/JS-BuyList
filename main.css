@@ -2,8 +2,8 @@
 body {
 	    background: #D7F6FF;
 	    font-family: SansSerif;
-	/ / font-size: 14 px;
 	    line-height: 1.4em;
+			opacity: 0.9;
 	}
 
 	* {
@@ -24,12 +24,13 @@ body {
 
 	.box.grid > [class*="name"].column {
 	    width: 25%;
+			box-sizing:border-box;
 	}
 
 	.column.complex {
 	    width: 37.5%;
-	    display: flex;
-	    flex: auto;
+	    display: inline-block;
+	   box-sizing: border-box;
 
 	}
 
@@ -41,6 +42,10 @@ body {
 	    border-radius: .3rem;
 	    line-height: 1;
 	}
+
+ .box.bought-items > .label{
+	 text-decoration: line-through;
+ }
 
 	.box.mini.label {
 	    font-size: .7rem;
@@ -75,14 +80,15 @@ body {
 	    background: white;
 	}
 
-	.state.not-bought {
+	.state.not-bought, .state.already-bought {
 	    width: 100%;
 	    height: 100%;
 	    padding: 0;
 	}
 
 	.box.items {
-	    padding-bottom: 0.5rem;
+	    padding-bottom: 1rem;
+			padding-top: 1rem;
 	}
 
 	.box.segments {
@@ -111,7 +117,6 @@ body {
 	.box.add input {
 	    margin: 0;
 	    flex: auto;
-	/ / max-width: 100 %;
 	    width: 60%;
 	    padding-left: .8em;
 	}
@@ -127,7 +132,7 @@ body {
 	    padding-bottom: 0rem;
 	}
 
-	.box.button.main {
+	.box.button.add-button {
 	    display: inline-block;
 	    min-height: 1em;
 	    background-color: #3192EA;
@@ -138,13 +143,16 @@ body {
 	    border-bottom-left-radius: 0;
 	}
 
-	.box.button.main:hover {
+	.box.button.add-button:hover {
 	    background-color: #1b78cc;
 	}
 
-	.amount-buttons {
-	    text-align: center;
+	.box.button.add-button:active {
+	    background-color: #1b5eae;
 	}
+	.amount-buttons {
+    text-align: center;
+  }
 
 	.box.button {
 	    padding: .8em 1.1em;
@@ -157,15 +165,24 @@ body {
       transition: all .35s ease;
       cursor: pointer;
       position: relative;
+			outline: none;
 	}
 
 	.box.mini.button {
 	    font-size: .7rem;
 	}
 
-	.box.mini.buy-button {
+	.box.mini.buy-button, .box.mini.unbuy-button{
 	    background-color: #D7F6FF;
+			display: inline-block;
 	}
+	.box.mini.buy-button:hover, .box.mini.unbuy-button:hover {
+    background-color: #c1e5f8;
+  }
+
+.box.mini.buy-button:active, .box.mini.unbuy-button:active {
+    background-color: #aed2e5;
+  }
 
 	.box.round.button {
 	    border-radius: 10em;
@@ -184,6 +201,10 @@ body {
     background-color: #B12828;
   }
 
+	.box.mini.red.button:active {
+    background-color: #b12828;
+  }
+
 	.box.mini.green.button {
 	    background-color: #21BA45;
 	}
@@ -192,6 +213,23 @@ body {
 	    background-color: #219b38;
 	}
 
+	.box.mini.green.button:active {
+    background-color: #22993a;
+  }
+
+	.box.mini.red.button.disabled {
+    opacity: 0.45;
+  }
+
+  .box.mini.red.button.disabled:hover {
+    background-color: #DB2828;
+    cursor: not-allowed;
+  }
+
+  .box.mini.red.button.disabled:hover::after {
+    display: none !important;
+  }
+
 	.last-buttons {
 	    text-align: right !important;
 	    padding-top: .5rem;
@@ -199,13 +237,19 @@ body {
 	}
 
 	.column.one {
-	    width: 70%;
-	    padding: 1rem;
+		box-sizing: border-box;
+	  display: inline-block;
+	  width: 65%;
+	  padding: 1rem;
+	  float: left;
 	}
 
 	.column.two {
-	    width: 35%;
-	    padding: 1rem;
+		box-sizing: border-box;
+    display: inline-block;
+    width: 35%;
+    padding: 1rem;
+    float: right;
 	}
 
 	.box.grid > * {
@@ -256,47 +300,128 @@ body {
 	    font-weight: 200;
 	}
 
+	.button::after {
+	    position: absolute;
+	    bottom: 106%;
+	    left: 0;
+	    right: 0;
+	    margin: auto;
+	    background: #4343c7;
+	    opacity: 0.93;
+	    border-radius: 10px;
+	    color: white;
+	    padding: 10px 12px;
+	    line-height: 10px;
+	    font-size: 12px;
+	    font-weight: 200;
+	    transition: all .2s ease-in-out;
+	    content: attr(data-tooltip);
+	    width: 40px;
+	    transform: scale(0, 0);
+	}
+
+	.button:hover::after {
+	    display: inline-block;
+	    transform: scale(1, 1);
+	}
+
+	.state.not-bought::after {
+	    position: absolute;
+	    bottom: 106%;
+	    left: 0;
+	    right: 0;
+	    margin: auto;
+	    background: #4343c7;
+	    opacity: 0.93;
+	    border-radius: 10px;
+	    color: white;
+	    padding: 10px 12px;
+	    line-height: 10px;
+	    font-size: 12px;
+	    font-weight: 200;
+	    transition: all .2s ease-in-out;
+	    content: attr(data-tooltip);
+	    /*width: 30px;*/
+	    transform: scale(0, 0);
+	}
+
+	.state.not-bought:hover::after {
+	    display: inline-block;
+	    transform: scale(1, 1);
+	}
+
+	.state.already-bought {
+	    text-decoration: line-through;
+	}
+
+	.name-edit, .already-bought, .button.unbuy-button {
+	    display: none;
+	}
+
+	.hidden > * {
+	    display: none;
+	}
+
+	.hidden > .label.left {
+	    display: none;
+	}
+
+	.name-edit {
+	    box-sizing: border-box;
+	    width: 100%;
+	    display: inline-block;
+	}
+
+	.hidden{
+	    display: none!important;
+	}
+
 	@media print {
 	    .box.label.made-by {
 	        background-color: white;
 	        color: black;
-	        border: 1px solid;
-	        border-color: #4343c7;
+	        border: 1px solid black;
 	        position: fixed;
 	        left: 3rem;
 	        bottom: -2px;
 	    }
+			.signature.buy-list {
+	        display: none;
+	    }
 
+	    .box.segments > .segment {
+	        border-color: black;
+	    }
+
+	    .box.segments, .box.button, .box.button.add-button, .box.round.button, .box.label, .box.round.label, .box.mini.red.button {
+	        border: 1px solid black;
+	        color: black;
+	    }
+
+	    .box.button::after {
+	        display: none;
+	    }
+
+	    .box.main-container {
+	        width: 99%;
+	        box-sizing: border-box;
+	    }
 	}
 
 	@media (max-width: 700px) {
-	    .box.grid.columns-container {
-	        display: block;
-	    }
+		.column.one {
+        float: none;
+        width: 100%;
+        min-width: 470px;
+    }
+
+    .column.two {
+        float: none;
+        width: 100%;
+        min-width: 470px;
+    }
 
 	    .box.main-container {
 	        padding-top: 20px;
 	    }
-	}
-
-	.button::after {
-	    position: absolute;
-	    bottom: 105%;
-	    left: 25%;
-	    background: #4343c7;
-	    border-radius: 10px;
-	    color: white;
-	    opacity: 0;
-	    padding: 10px 12px;
-	    line-height: 1em;
-	    font-size: .7em;
-	    font-weight: 200;
-	    visibility: hidden;
-	    transition: all .5s ease;
-	    content: attr(data-tooltip);
-	}
-
-	.button:hover::after {
-	    opacity: 1;
-	    visibility: visible;
 	}
