@@ -12,13 +12,12 @@ body {
 
 	.box.main-container {
 	    padding-top: 100px;
-	    margin-right: 2rem;
-	    margin-left: 2rem;
+	    margin-right: 1rem;
+	    margin-left: 1rem;
 	}
 
 	.box.grid {
 	    margin: -1rem;
-	    display: flex;
 	    padding: 0;
 	}
 
@@ -81,6 +80,7 @@ body {
 	}
 
 	.state.not-bought, .state.already-bought {
+		  display: inline-block;
 	    width: 100%;
 	    height: 100%;
 	    padding: 0;
@@ -408,7 +408,7 @@ body {
 	    }
 	}
 
-	@media (max-width: 700px) {
+	@media (max-width: 720px) {
 		.column.one {
         float: none;
         width: 100%;
